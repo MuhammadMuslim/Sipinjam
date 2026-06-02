@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2026 pada 00.46
+-- Waktu pembuatan: 03 Jun 2026 pada 01.29
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -44,11 +44,39 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`id`, `nidn`, `nama`, `jabatan`, `no_wa`, `email`, `is_active`, `created_at`, `updated_at`) VALUES
-(52, '12048801', 'Dr. Ahmad Fauzi, M.Kom', 'Lektor Kepala', '628112345601', 'ahmad.fauzi@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
-(53, '23057902', 'Dr. Siti Rahayu, M.T', 'Lektor', '628123456702', 'siti.rahayu@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
-(54, '34068503', 'Ir. Bambang Hendra, M.Eng', 'Asisten Ahli', '628134567803', 'bambang@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
-(55, '45079204', 'Dr. Yunita Sari, M.Kom', 'Lektor Kepala', '628145678904', 'yunita.sari@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
-(56, '56089805', 'M. Ridwan, S.T., M.T', 'Lektor', '628156789005', 'ridwan@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59');
+(57, '509047603', 'Istri Bartini, S.SiT., MPH', 'Wakil Ketua I Bidang Akademik', '08112509056', 'istribartini@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(58, '528097201', 'Dr. Bdn. Christina Pernatun Kismoyo., S.SiT., MPH.', 'Dosen Tetap', '08122779131', 'pernatun01@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(59, '529057902', 'Dr. Nining Tunggal Sri Sunarti, A.md.Keb., SKM., MPH', 'Dosen Tetap', '081327580885', 'niningtunggal25@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(60, '501027703', 'Bdn. Endang Khoirunnisa, S.ST.Keb., M.Kes', 'Ketua STIKes Akbidyo', '087839103653', 'endang070478@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(61, '505027602', 'Vonita Indra Andriyani., SE., MM.', 'Dosen Tetap', '0882005908048', 'vonitazuhri@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(62, '528047901', 'Dr. Bdn. Eny Retna Ambarwati, S.SiT.,M.Kes.', 'Dosen Tetap', '088806027754', 'enyretna@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(63, '505088201', 'Dr. Fitriani Mediastuti, S.Si., M.Kes.', 'Wakil Ketua III Bidang Kemahasiswaan', '08179415400', 'akbidmedi@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(64, '524038502', 'Reni Tri Lestari, A.md.Keb., SKM., M.H.Kes', 'Dosen Tetap', '081329360666', 'renitrilestari@yahoo.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(65, '1010078301', 'Andina Vita Sutanto, A.md.Keb., SKM., MPH', 'Dosen Tetap', '081244661983', 'andinavslaras@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(66, '510068301', 'Bdn. Ari Andriyani, S.SiT., M.Keb', 'Dosen Tetap', '0818270106', 'rayoung.gayuh@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(67, '521088701', 'Sylvi Wafda Nur Amellia, S.ST., M.Keb', 'Dosen Tetap', '081230321792', 'amellia.swn@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(68, '1120028601', 'Era Revika, S.ST., M.Kes', 'Dosen Tetap', '081392297071', 'revika13@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(69, '515077003', 'dr. Mahindria Vici Virahaju, Sp.OG', 'Dosen Tetap', '082138290411', 'ind.vici@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(70, '502078402', 'Kurniasari Pratiwi, S.Psi., MA', 'Dosen Tetap', '081328233456', 'kurniasaripratiwi1@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(71, '502129201', 'Anugerah Destia Trisetyaningsih, S.ST., M.Keb', 'Dosen Tetap', '081229455404', 'anugerahdestia.ad@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(72, '516128901', 'Widy Nurwiandani, S.ST., M.Kes', 'Dosen Tetap', '081575889698', 'bidanwidy@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(73, '531038901', 'Bdn. Isabella Rahmawati, S.ST., M.Kes', 'Dosen Tetap', '085725155542', 'isabellarahmawati15@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(74, '502117701', 'Bdn. Tri Ariani, S.ST., M.M', 'Dosen Tetap', '085713328358', 'tcukarisudarmono@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(75, '516126701', 'Dra. RA. Rawimiharti, MPH', 'Dosen Tetap', '082326569709', 'r4wimiharti@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(76, '520128902', 'Nurvita Wikansari, SKM., MPH', 'Dosen Tetap', '085641319064', 'nurvita.wikansari@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(77, '604048901', 'Riadini Wahyu Utami, S.ST., MPH', 'Dosen Tetap', '085725578557', 'riadiniwahyuutami@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(78, '622098701', 'Desi Ekawati, S.ST., MPH', 'Dosen Tetap', '085725123320', 'eccadesy@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(79, '521079201', 'Tria Harsiwi Nurul Insani, S.ST., MMR', 'Dosen Tetap', '083144749048', 'triaharsiwi92@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(80, '523029201', 'Nanda Surya Febrianta, SKM., MMR', 'Dosen Tetap', '081229522636', 'Nandasurya2@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(81, '501019201', 'apt. Melia Eka Rosita, S.Farm., M.Pharm.Sci', 'Dosen Tetap', '081336686613', 'melia.rafa11@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(82, '528068901', 'apt. Mega Karina Putri, S.Farm., M.Pharm.Sci', 'Dosen Tetap', '08562851309', 'megakarinaputri@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(83, '505038501', 'apt. Beta Ria Erika Marita Dellima, M.Sc', 'Dosen Tetap', '081328030550', 'rifqiree@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(84, '628058502', 'apt. Aji Tetuko, M.Sc', 'Dosen Tetap', '085228701635', 'aliftetuko2011@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(85, '516109303', 'apt. M.Alif Fajri, S.Farm., M. Farm', 'Dosen Tetap', '085228154455', 'm.aliffajri@akbidyo.ac.id', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(86, '518119501', 'Muhammad Muslim, S.Kom., MT', 'Dosen Tetap', '085954330691', 'muslimalfathih19@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(87, '10076601', 'apt. Dra. Syamsu Windarti, MT', 'Dosen Tetap', '08164222554', 'windartisyamsu@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(88, '517048303', 'Eni Kartika Sari, S.Si., M.Sc', 'Wakil Ketua II Bidang Administrasi Umum dan Keuangan', '081804314893', 'kartikasarieni83@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04'),
+(89, '14106202', 'Drs. Teguh Budi Prsetya, M.Si', 'Dosen Tetap', '081392658998', 'teguhbudiprasetya@gmail.com', 1, '2026-06-03 06:28:04', '2026-06-03 06:28:04');
 
 -- --------------------------------------------------------
 
@@ -284,15 +312,6 @@ CREATE TABLE `peminjaman` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `peminjaman`
---
-
-INSERT INTO `peminjaman` (`id`, `kode_pinjam`, `mahasiswa_id`, `dosen_id`, `ruang_id`, `mata_kuliah`, `tanggal`, `jam_mulai`, `jam_selesai`, `jumlah_peserta`, `keterangan`, `status`, `alasan_tolak`, `approved_by`, `approved_at`, `wa_notif_sent`, `created_at`, `updated_at`) VALUES
-(13, 'PJM-20260602-001', 255, 52, 15, '1', '2026-06-02', '07:00:00', '08:00:00', 4, '1', 'selesai', NULL, 2, '2026-06-02 18:04:24', 0, '2026-06-02 22:39:44', '2026-06-02 23:05:30'),
-(14, 'PJM-20260602-002', 282, 52, 25, '1', '2026-06-02', '07:00:00', '08:00:00', 1, '1', 'selesai', NULL, 2, '2026-06-02 18:04:29', 0, '2026-06-02 23:03:00', '2026-06-02 23:05:52'),
-(15, 'PJM-20260602-003', 256, 52, 31, '1', '2026-06-02', '07:00:00', '08:00:00', 1, '1', 'ditolak', '', 2, '2026-06-02 18:45:10', 0, '2026-06-02 23:37:47', '2026-06-02 23:45:10');
-
 -- --------------------------------------------------------
 
 --
@@ -354,7 +373,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `is_active`, `last_login`, `created_at`, `updated_at`) VALUES
 (1, 'Super Administrator', 'superadmin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'super_admin', 1, NULL, '2026-06-02 08:56:55', '2026-06-02 08:56:55'),
-(2, 'Admin Sistem', 'admin', '$2y$10$XTu8tCf3c2uzoE8fzvrdaeVNd0.wTw/tnT2UfD/1rNAIuMcZy4vPC', 'admin', 1, '2026-06-02 23:45:00', '2026-06-02 08:56:55', '2026-06-02 23:45:00'),
+(2, 'Admin Sistem', 'admin', '$2y$10$XTu8tCf3c2uzoE8fzvrdaeVNd0.wTw/tnT2UfD/1rNAIuMcZy4vPC', 'admin', 1, '2026-06-03 05:54:52', '2026-06-02 08:56:55', '2026-06-03 05:54:52'),
 (3, 'Operator 1', 'operator1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'operator', 1, NULL, '2026-06-02 08:56:55', '2026-06-02 08:56:55');
 
 --
@@ -408,7 +427,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
