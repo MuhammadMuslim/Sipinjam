@@ -1,0 +1,452 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 03 Jun 2026 pada 00.46
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sipinjam`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `dosen`
+--
+
+CREATE TABLE `dosen` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nidn` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(100) DEFAULT NULL,
+  `no_wa` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `dosen`
+--
+
+INSERT INTO `dosen` (`id`, `nidn`, `nama`, `jabatan`, `no_wa`, `email`, `is_active`, `created_at`, `updated_at`) VALUES
+(52, '12048801', 'Dr. Ahmad Fauzi, M.Kom', 'Lektor Kepala', '628112345601', 'ahmad.fauzi@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
+(53, '23057902', 'Dr. Siti Rahayu, M.T', 'Lektor', '628123456702', 'siti.rahayu@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
+(54, '34068503', 'Ir. Bambang Hendra, M.Eng', 'Asisten Ahli', '628134567803', 'bambang@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
+(55, '45079204', 'Dr. Yunita Sari, M.Kom', 'Lektor Kepala', '628145678904', 'yunita.sari@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59'),
+(56, '56089805', 'M. Ridwan, S.T., M.T', 'Lektor', '628156789005', 'ridwan@dosen.ac.id', 1, '2026-06-02 22:32:59', '2026-06-02 22:32:59');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mahasiswa`
+--
+
+CREATE TABLE `mahasiswa` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nim` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `prodi` varchar(100) NOT NULL,
+  `angkatan` year(4) NOT NULL,
+  `no_hp` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `prodi`, `angkatan`, `no_hp`, `email`, `is_active`, `created_at`, `updated_at`) VALUES
+(191, '25111001', 'HELDA SELSA HARUNI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(192, '25111002', 'QAYLA FARAH NUR LATIFAH', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(193, '25111003', 'FIRBI ZAIN ALISHA', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(194, '25111004', 'INDRI ERNAWATI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(195, '25111005', 'FATMA KURNIAWATI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(196, '25111006', 'ALITA KESYA MOCODOMPIS', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(197, '25111007', 'TIARA SESI YOY MBALI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(198, '25111008', 'FRANCISKA WANDA ASTRI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(199, '25111009', 'AZZIRA VANYA SURYA RAMADHAN', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(200, '25111010', 'MONA ADITYA MAHARANI', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(201, '25111011', 'RIRIS FITRIANINGRUM', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(202, '25111012', 'CLAUDIA LAWUNEDI RAGA KIRUK', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(203, '25111013', 'USWATUN HASANAH AL MUJAHIDAH', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(204, '25111014', 'VILEIN KRISMA TESLATU', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(205, '25111016', 'SELVISTA KERIN HERNANDA', 'D3 Bidan', '2025', '', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(206, '24111001', 'LAILA FITRATUNNISA', 'D3 Bidan', '2024', '083867324737', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(207, '24111002', 'IMELDA KUSNIA WINDY', 'D3 Bidan', '2024', '083154946657', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(208, '24111003', 'ANGGIT AMELIA VIRGIN', 'D3 Bidan', '2024', '088226876056', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(209, '24111004', 'CHALISTA HEPY VRISCASARI', 'D3 Bidan', '2024', '083145012101', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(210, '24111005', 'KHALA YULIANTI', 'D3 Bidan', '2024', '088980643634', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(211, '24111006', 'PUTRI NURHASANAH', 'D3 Bidan', '2024', '085769732967', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(212, '24111007', 'ERIANA ERIN', 'D3 Bidan', '2024', '082155936676', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(213, '24111008', 'FIRNANDA ARTIKA PUTRI', 'D3 Bidan', '2024', '085600170189', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(214, '24111009', 'IMELDA INTAN DIAN SAPUTRI', 'D3 Bidan', '2024', '087842104902', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(215, '24111010', 'JELITA', 'D3 Bidan', '2024', '089654626261', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(216, '24111011', 'LILYAN AJENG TRIANI', 'D3 Bidan', '2024', '081227737084', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(217, '24111012', 'MARTHA GABY', 'D3 Bidan', '2024', '081251725641', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(218, '24111013', 'SINTA SETYANINGSIH', 'D3 Bidan', '2024', '0895364940259', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(219, '24111014', 'TERA', 'D3 Bidan', '2024', '081256773253', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(220, '23111001', 'AGNES LASMI', 'D3 Bidan', '2023', '082157765422', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(221, '23111002', 'ATANIA', 'D3 Bidan', '2023', '085787735174', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(222, '23111004', 'DINDA MELTIYANA', 'D3 Bidan', '2023', '083861536481', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(223, '23111005', 'DWI SEPTI PORNINGSIH', 'D3 Bidan', '2023', '085213608137', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(224, '23111006', 'FIFI SEPTIA ZULAECHA', 'D3 Bidan', '2023', '085643611725', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(225, '23111007', 'GALUH RAHAYU KUMUDANINGSIH', 'D3 Bidan', '2023', '089636531112', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(226, '23111008', 'KEYSHA NATSWA SAYYIDINA', 'D3 Bidan', '2023', '085163147019', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(227, '23111009', 'NOVITA SARI EVA PUTERI', 'D3 Bidan', '2023', '088228678834', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(228, '23111010', 'MEDINA AULIA CAHYANI', 'D3 Bidan', '2023', '085753692606', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(229, '23111011', 'MARIA BASILIA OKI', 'D3 Bidan', '2023', '0895336406017', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(230, '23111012', 'TRI NIKEN UTARI', 'D3 Bidan', '2023', '082256481757', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(231, '25221001', 'NUR LAILI HASANAH', 'D4 MIK', '2025', '083146492507', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(232, '25221002', 'KING KIN AYU LAKSMI', 'D4 MIK', '2025', '082220930068', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(233, '25221003', 'RISNA AYU PUSPITASARI', 'D4 MIK', '2025', '089518011353', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(234, '25221004', 'GHESSA HERSA RAMADAN', 'D4 MIK', '2025', '088983910732', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(235, '25221005', 'VORTUNATA LESTARI LERO', 'D4 MIK', '2025', '085133707856', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(236, '25221006', 'PIUS X JAYA DARA IWANG', 'D4 MIK', '2025', '081236283421', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(237, '25221007', 'REINHARD YUNUS RATMALA', 'D4 MIK', '2025', '081356276035', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(238, '25221008', 'STEVANY HELSIN LALAAR', 'D4 MIK', '2025', '082197580410', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(239, '25221009', 'VIRA ADELIA RISMAN', 'D4 MIK', '2025', '082245132056', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(240, '24221001', 'FADILAH', 'D4 MIK', '2024', '085947718257', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(241, '24221002', 'PINASTHIKA ESHA WAHYUNING TYAS', 'D4 MIK', '2024', '088227580392', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(242, '24221003', 'RYSKA NUR AISYAH', 'D4 MIK', '2024', '083186027073', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(243, '24221004', 'FELIXA RARA NAZAHRA', 'D4 MIK', '2024', '083139097304', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(244, '24221005', 'SONIA ANGGA SARI', 'D4 MIK', '2024', '085339215737', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(245, '24221006', 'ANANDA GERBY PUTRI WIJAYA', 'D4 MIK', '2024', '089688431050', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(246, '24221008', 'CHELSEA NATALIA DELISKA BOLAGI', 'D4 MIK', '2024', '085656261615', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(247, '24221009', 'CHELSEA OLIVIA ARDHANI', 'D4 MIK', '2024', '082372315623', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(248, '24221010', 'DAMAIANA FEBRYMIA NUGROHO', 'D4 MIK', '2024', '083189913126', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(249, '24221012', 'SITA PURBASARI', 'D4 MIK', '2024', '083174407275', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(250, '23221001', 'ANNISA DEFRIYANTI ROHMA', 'D4 MIK', '2023', '081374522646', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(251, '23221003', 'CILVIA OKTAVIANINGSIH', 'D4 MIK', '2023', '0882008889958', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(252, '23221004', 'DESTRI WULANTARI', 'D4 MIK', '2023', '085652428266', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(253, '23221005', 'JOKO DWI SAPUTRA', 'D4 MIK', '2023', '082350400735', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(254, '23221006', 'ZUKHROFATUDDIEN', 'D4 MIK', '2023', '081392788391', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(255, '22221001', 'ARUM CAHYANI', 'D4 MIK', '2022', '082375700271', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(256, '22221002', 'AVITO ANDHIKA ARIMUKTI STEPHANUS', 'D4 MIK', '2022', '083842157484', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(257, '22221003', 'HELDA APRILIA HANDAYANI', 'D4 MIK', '2022', '085332145605', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(258, '22221004', 'WIJONARKO', 'D4 MIK', '2022', '082121559771', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(259, '25331001', 'NUR HAKIKI', 'S1 Farmasi', '2025', '081355496121', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(260, '25331002', 'VIVIN RAMBU ANJURI', 'S1 Farmasi', '2025', '082144755960', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(261, '25331003', 'M. RIO SETIAWAN', 'S1 Farmasi', '2025', '081357084352', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(262, '25331004', 'JOYVEBYOLA ELGA PUTRI ROHMAD', 'S1 Farmasi', '2025', '088232468133', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(263, '25331005', 'AGUSTIANI ETRIN ANGGUT', 'S1 Farmasi', '2025', '081237827880', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(264, '25331006', 'AINUR SYIAH MAGFIROH', 'S1 Farmasi', '2025', '081247148953', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(265, '25331010', 'RAIHAN MAHARANI KAISUPY', 'S1 Farmasi', '2025', '082267266198', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(266, '25331011', 'SAYLINDRI YANI THALIYA', 'S1 Farmasi', '2025', '082256242001', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(267, '25331012', 'WEHOLINA TIRZA KOBAK', 'S1 Farmasi', '2025', '081344132968', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(268, '24331001', 'YUSI AMALIA SAFITRI', 'S1 Farmasi', '2024', '081559521751', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(269, '24331002', 'SALWA AZZAHRAH AHMADI', 'S1 Farmasi', '2024', '085828482440', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(270, '24331003', 'ADESTA WIDYANINGSIH', 'S1 Farmasi', '2024', '088980562228', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(271, '24331004', 'ANNISA CHANDRA AGUSTIN', 'S1 Farmasi', '2024', '085228145614', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(272, '24331005', 'HERMINISARI KUDU DANGA', 'S1 Farmasi', '2024', '081238541520', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(273, '24331006', 'APRILIA WORUMBOI', 'S1 Farmasi', '2024', '081398219982', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(274, '24331007', 'DINA RESTI MARTINA', 'S1 Farmasi', '2024', '082185532852', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(275, '24331008', 'FEBRIANA RENITA LOE', 'S1 Farmasi', '2024', '081236859447', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(276, '24331009', 'JOIH APRIDA BAHABOL', 'S1 Farmasi', '2024', '082386747662', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(277, '24331010', 'MARIA FANNY CAHYA LESTARI', 'S1 Farmasi', '2024', '081257006557', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(278, '24331011', 'MIRANDA', 'S1 Farmasi', '2024', '082159571808', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(279, '24331012', 'OTOPIN SUB', 'S1 Farmasi', '2024', '081361592722', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(280, '24331013', 'STERA PIETRIX RAHARUSUN', 'S1 Farmasi', '2024', '082393575600', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(281, '24331014', 'YULINDA JUNITA ISIR', 'S1 Farmasi', '2024', '082199293004', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(282, '23331001', 'ADINDA MARISKA MASAYU AYULIADRI', 'S1 Farmasi', '2023', '085263636704', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(283, '23331002', 'ASHILLA HILDA RAHMANI', 'S1 Farmasi', '2023', '083138194281', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(284, '23331003', 'DESTHA MAYCRISTIA', 'S1 Farmasi', '2023', '082151068494', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(285, '23331004', 'EVARINA MELPINA YORLIN EMY PAHABOL', 'S1 Farmasi', '2023', '081345368108', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(286, '23331005', 'JESSICA NATALIE BESSIE', 'S1 Farmasi', '2023', '081353135920', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(287, '23331006', 'PADILAH FUJI ASTUTI', 'S1 Farmasi', '2023', '089697502921', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(288, '23331007', 'NOVIANI', 'S1 Farmasi', '2023', '085348905501', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(289, '23331008', 'NOVITA PANJAITAN', 'S1 Farmasi', '2023', '082185377905', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(290, '23331010', 'LENI', 'S1 Farmasi', '2023', '085248350450', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(291, '23331011', 'SAGITA MAULANA SHOFIA', 'S1 Farmasi', '2023', '085821941265', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(292, '22331001', 'AHMAD FATHONI', 'S1 Farmasi', '2022', '089638641475', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(293, '22331002', 'DZULFITRI LAILATUL QODDRIYAH', 'S1 Farmasi', '2022', '082280765875', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(294, '22331003', 'FANIESHA ALIA ARSADY', 'S1 Farmasi', '2022', '082198692486', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(295, '22331005', 'FREDY TANDI SULE', 'S1 Farmasi', '2022', '08124801041', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(296, '22331006', 'GLENSIUS RUPILELE', 'S1 Farmasi', '2022', '082335549359', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(297, '22331008', 'INDRI YANA', 'S1 Farmasi', '2022', '085706758353', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(298, '22331009', 'KRISTINA MAHDALENA PURBA', 'S1 Farmasi', '2022', '082284216145', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(299, '22331011', 'MARCELLI REGINA AGUSTI', 'S1 Farmasi', '2022', '085749654322', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(300, '22331012', 'MUHAMMAD IQBAL MAULIDIN', 'S1 Farmasi', '2022', '085750525611', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(301, '22331013', 'NATALIA GIBAN', 'S1 Farmasi', '2022', '081247650473', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(302, '22331015', 'ORINCE BAHABOL', 'S1 Farmasi', '2022', '081218461304', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(303, '22331016', 'PUTU WINA WIDYA ARTINI', 'S1 Farmasi', '2022', '082342277482', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(304, '22331017', 'RAFLI PUTRA ARIPIN', 'S1 Farmasi', '2022', '08994896611', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(305, '22331018', 'SELINLING DAMAR PRASTISTA', 'S1 Farmasi', '2022', '08179439741', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(306, '22331020', 'WINDA MAHDALENA', 'S1 Farmasi', '2022', '082332645225', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(307, '22331021', 'YOSUA YAHULI KOBAK', 'S1 Farmasi', '2022', '082114661960', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(308, '25341001', 'ZULKHA ANJA KUSUMA', 'S1 Kebidanan', '2025', '088227299285', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(309, '25341002', 'SYIFA NOVIANI PUTRI', 'S1 Kebidanan', '2025', '083871027761', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(310, '25341003', 'KANAYA GRECIA', 'S1 Kebidanan', '2025', '082280456911', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(311, '25341004', 'CLAUDIA LAURA PUTRI CANIAGO', 'S1 Kebidanan', '2025', '085325012887', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(312, '25341005', 'AGUSTINA TOBO', 'S1 Kebidanan', '2025', '085339158366', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(313, '25341006', 'ANASTASIA MELSIANI PAULINA GHUNU', 'S1 Kebidanan', '2025', '082310144328', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(314, '25341007', 'AZZHARA IKA RISNA PUTRI', 'S1 Kebidanan', '2025', '081373992885', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(315, '25341008', 'JOSICA AVRILIA', 'S1 Kebidanan', '2025', '082152432301', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(316, '25341009', 'MARZALINA', 'S1 Kebidanan', '2025', '085346368280', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(317, '25341010', 'MAYANG SEPTI INTANTRI', 'S1 Kebidanan', '2025', '081235165104', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(318, '25341011', 'UMI MARSELA', 'S1 Kebidanan', '2025', '085828280426', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(319, '25341012', 'VIONA', 'S1 Kebidanan', '2025', '083141886759', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(320, '25341013', 'VIONNA FIRENDFIELD AMNESTYA SAPUTRA', 'S1 Kebidanan', '2025', '082198969806', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(321, '24341001', 'ANINDITA NAYLA TIARA ATMAJA', 'S1 Kebidanan', '2024', '081575482746', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(322, '24341003', 'APRININDA MARDHANI', 'S1 Kebidanan', '2024', '081327507310', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(323, '24341004', 'EARLY NUR SAPUTRI', 'S1 Kebidanan', '2024', '085876075965', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(324, '24341005', 'MERLIN TESSA WAHYU NINDA', 'S1 Kebidanan', '2024', '082151959566', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(325, '24341006', 'DEBRINA PUTRI ARFIANTI', 'S1 Kebidanan', '2024', '085608529432', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(326, '24341007', 'DHIYA WIJAYANTI', 'S1 Kebidanan', '2024', '085367769304', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(327, '24341008', 'FITRI DWI RAMADHANI', 'S1 Kebidanan', '2024', '089529304168', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(328, '24341009', 'LENI WIDYASTUTI', 'S1 Kebidanan', '2024', '082221297853', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(329, '24341010', 'NABHILA AYU HAPSARI', 'S1 Kebidanan', '2024', '0882003458311', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(330, '24341012', 'OLIVIA RILFIANA', 'S1 Kebidanan', '2024', '083162515928', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(331, '24341013', 'QUEENY FATIKA ADISTIRA', 'S1 Kebidanan', '2024', '087774199101', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(332, '24341014', 'SEPTIKA DEBORA', 'S1 Kebidanan', '2024', '082196960104', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(333, '24341015', 'SESILIA', 'S1 Kebidanan', '2024', '081352531656', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(334, '23341001', 'BETSHEBA TWITANY KHARISMA GRIETHA EFELIN', 'S1 Kebidanan', '2023', '085849105105', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(335, '23341002', 'FRANSISKA NILA DEWI PRATAMA', 'S1 Kebidanan', '2023', '085828917470', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(336, '23341003', 'MARIA ELLCENIA MARDIADINATA', 'S1 Kebidanan', '2023', '081347916377', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(337, '23341004', 'IRMA APRILIA', 'S1 Kebidanan', '2023', '082351521214', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(338, '23341005', 'KASILDA SINJA', 'S1 Kebidanan', '2023', '081528484463', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(339, '23341006', 'KRISTIANI NATALIA', 'S1 Kebidanan', '2023', '082251605686', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(340, '23341007', 'LEDY ANJELA', 'S1 Kebidanan', '2023', '083151341548', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(341, '23341008', 'HERLI PUTRI SANDORA', 'S1 Kebidanan', '2023', '089633993417', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(342, '23341009', 'SESILIA BERTA', 'S1 Kebidanan', '2023', '081257560850', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(343, '23341010', 'SYAHDA SALSABILA RAMDIAS', 'S1 Kebidanan', '2023', '082136708320', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(344, '23341011', 'TERA AYU PRAMETA SARI', 'S1 Kebidanan', '2023', '082241422942', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(345, '23341012', 'TERESA DANIELA BUDHOARKO DYAH KUSUMA', 'S1 Kebidanan', '2023', '083134906220', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(346, '23341013', 'THERESIA CINDERELLA RANI', 'S1 Kebidanan', '2023', '082256406064', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(347, '22341001', 'AMELIA FIRANISA MANIANI WAYOI', 'S1 Kebidanan', '2022', '081393622025', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(348, '22341002', 'ANETA PRADITA AYU', 'S1 Kebidanan', '2022', '0882007369140', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(349, '22341003', 'AYU VRADILA', 'S1 Kebidanan', '2022', '083845700052', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(350, '22341004', 'CHAROLINA SAHARA', 'S1 Kebidanan', '2022', '0895384165680', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(351, '22341005', 'CINDY ABERTA NINGRUM', 'S1 Kebidanan', '2022', '081533494053', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(352, '22341006', 'DESTHIANI INDAH TAHUN', 'S1 Kebidanan', '2022', '085705672320', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(353, '22341007', 'DEWI AYU PUSPITASARI', 'S1 Kebidanan', '2022', '082137260261', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(354, '22341009', 'DILA INAYATU SYARIFAH', 'S1 Kebidanan', '2022', '085716925851', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(355, '22341010', 'EVA ELYA SARI', 'S1 Kebidanan', '2022', '08812654450', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(356, '22341011', 'JESLIN AUDRIAN ALEXANDRA', 'S1 Kebidanan', '2022', '082298190563', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(357, '22341012', 'LAURENCIA IRA AZZAHRA', 'S1 Kebidanan', '2022', '082376854742', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(358, '22341013', 'LUTFIYAH AZIZAH', 'S1 Kebidanan', '2022', '089527664893', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(359, '22341015', 'OPI CHOERLEN', 'S1 Kebidanan', '2022', '081257725834', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(360, '22341016', 'PUTRI AYU PRABANDARI', 'S1 Kebidanan', '2022', '082253787514', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(361, '22341017', 'SALMA AVRILA HANIFAH', 'S1 Kebidanan', '2022', '089652290071', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(362, '22341019', 'SINDI ASTIKARANI', 'S1 Kebidanan', '2022', '082259224492', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(363, '22341020', 'SUSIANA HANDAYANI', 'S1 Kebidanan', '2022', '081929745523', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(364, '22341021', 'TALITHA RITYA MAIMUNABILA', 'S1 Kebidanan', '2022', '081228134872', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(365, '25143001', 'AGATA SAIRLALAI', 'S1 Kebidanan', '2025', '081343084840', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(366, '25143002', 'CALISTA MAHARANI', 'S1 Kebidanan', '2025', '085727142289', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(367, '25143003', 'DITA RANIA ARIESTIANI', 'S1 Kebidanan', '2025', '085855556488', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(368, '25143004', 'EMI LULUK MUTAZAH', 'S1 Kebidanan', '2025', '083804677223', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(369, '25143005', 'LAURENSIANA MIRSA BUNGA KOTA', 'S1 Kebidanan', '2025', '082144171539', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(370, '25143006', 'RISA FEBREYANTI', 'S1 Kebidanan', '2025', '085945220448', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(371, '25143007', 'RIZKY INDAH PUJIATI', 'S1 Kebidanan', '2025', '085609549187', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20'),
+(372, '25143008', 'WASTI SOFIA SERUNI NIEUWGUINEA PRAWAR', 'S1 Kebidanan', '2025', '085244004981', '', 1, '2026-06-02 21:31:20', '2026-06-02 21:31:20');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `peminjaman`
+--
+
+CREATE TABLE `peminjaman` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `kode_pinjam` varchar(30) NOT NULL,
+  `mahasiswa_id` int(10) UNSIGNED NOT NULL,
+  `dosen_id` int(10) UNSIGNED NOT NULL,
+  `ruang_id` int(10) UNSIGNED NOT NULL,
+  `mata_kuliah` varchar(150) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jam_mulai` time NOT NULL,
+  `jam_selesai` time NOT NULL,
+  `jumlah_peserta` smallint(6) NOT NULL DEFAULT 0,
+  `keterangan` text DEFAULT NULL,
+  `status` enum('menunggu','disetujui','ditolak','selesai','dibatalkan') NOT NULL DEFAULT 'menunggu',
+  `alasan_tolak` text DEFAULT NULL,
+  `approved_by` int(10) UNSIGNED DEFAULT NULL,
+  `approved_at` datetime DEFAULT NULL,
+  `wa_notif_sent` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id`, `kode_pinjam`, `mahasiswa_id`, `dosen_id`, `ruang_id`, `mata_kuliah`, `tanggal`, `jam_mulai`, `jam_selesai`, `jumlah_peserta`, `keterangan`, `status`, `alasan_tolak`, `approved_by`, `approved_at`, `wa_notif_sent`, `created_at`, `updated_at`) VALUES
+(13, 'PJM-20260602-001', 255, 52, 15, '1', '2026-06-02', '07:00:00', '08:00:00', 4, '1', 'selesai', NULL, 2, '2026-06-02 18:04:24', 0, '2026-06-02 22:39:44', '2026-06-02 23:05:30'),
+(14, 'PJM-20260602-002', 282, 52, 25, '1', '2026-06-02', '07:00:00', '08:00:00', 1, '1', 'selesai', NULL, 2, '2026-06-02 18:04:29', 0, '2026-06-02 23:03:00', '2026-06-02 23:05:52'),
+(15, 'PJM-20260602-003', 256, 52, 31, '1', '2026-06-02', '07:00:00', '08:00:00', 1, '1', 'ditolak', '', 2, '2026-06-02 18:45:10', 0, '2026-06-02 23:37:47', '2026-06-02 23:45:10');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `ruang`
+--
+
+CREATE TABLE `ruang` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `kode` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `kapasitas` smallint(6) NOT NULL DEFAULT 0,
+  `foto` varchar(255) DEFAULT NULL,
+  `lantai` tinyint(4) NOT NULL DEFAULT 1,
+  `fasilitas` text DEFAULT NULL,
+  `status` enum('aktif','perbaikan','nonaktif') NOT NULL DEFAULT 'aktif',
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `ruang`
+--
+
+INSERT INTO `ruang` (`id`, `kode`, `nama`, `kapasitas`, `foto`, `lantai`, `fasilitas`, `status`, `created_at`, `updated_at`) VALUES
+(15, 'R1LT3', 'Dewi Madrim', 20, NULL, 3, 'AC, Proyektor LCD, Papan Tulis', 'aktif', '2026-06-02 12:15:11', '2026-06-02 12:15:11'),
+(20, 'R2LT3', 'Dewi Ratih', 20, NULL, 3, 'AC, Proyektor LCD, Papan Tulis', 'aktif', '2026-06-02 12:23:44', '2026-06-02 12:23:44'),
+(21, 'R3LT3', 'Rukmini', 20, NULL, 3, 'AC, Proyektor LCD, Papan Tulis', 'aktif', '2026-06-02 12:24:26', '2026-06-02 12:24:26'),
+(22, 'R4LT3', 'Pergiwo', 45, NULL, 3, 'AC, Proyektor LCD, Papan Tulis, Audio', 'aktif', '2026-06-02 12:25:47', '2026-06-02 12:25:47'),
+(23, 'R5LT4', 'Dewi Supraba', 30, NULL, 4, 'AC, Proyektor LCD, Papan Tulis', 'aktif', '2026-06-02 12:26:26', '2026-06-02 12:26:26'),
+(24, 'R6LT4', 'Dewi Setyowati', 30, NULL, 4, 'AC, Proyektor LCD, Papan Tulis', 'aktif', '2026-06-02 12:36:11', '2026-06-02 12:36:11'),
+(25, 'AUDTLT3', 'Audio Visual', 50, NULL, 3, 'AC, Proyektor LED, Screen, Sound System', 'aktif', '2026-06-02 13:41:26', '2026-06-02 13:41:26'),
+(27, 'RGBR1', 'Larasati', 25, NULL, 1, 'AC, Proyektor LED, Screen', 'aktif', '2026-06-02 13:44:26', '2026-06-02 13:44:26'),
+(28, 'RGBR2', 'Shinta', 25, NULL, 1, 'AC, Proyektor LED, Screen', 'aktif', '2026-06-02 13:45:21', '2026-06-02 13:45:21'),
+(29, 'RGBR3', 'Kunti', 25, NULL, 2, 'AC, Proyektor LED, Screen', 'aktif', '2026-06-02 13:47:48', '2026-06-02 13:47:48'),
+(30, 'RGBR4', 'Drupadi', 25, NULL, 2, 'AC, Proyektor LED, Screen', 'aktif', '2026-06-02 13:48:11', '2026-06-02 13:48:11'),
+(31, 'r1', '1', 1, 'ruang_1780417838_308.png', 1, '1', 'aktif', '2026-06-02 23:30:38', '2026-06-02 23:30:38');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('super_admin','admin','operator') NOT NULL DEFAULT 'operator',
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `last_login` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `is_active`, `last_login`, `created_at`, `updated_at`) VALUES
+(1, 'Super Administrator', 'superadmin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'super_admin', 1, NULL, '2026-06-02 08:56:55', '2026-06-02 08:56:55'),
+(2, 'Admin Sistem', 'admin', '$2y$10$XTu8tCf3c2uzoE8fzvrdaeVNd0.wTw/tnT2UfD/1rNAIuMcZy4vPC', 'admin', 1, '2026-06-02 23:45:00', '2026-06-02 08:56:55', '2026-06-02 23:45:00'),
+(3, 'Operator 1', 'operator1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'operator', 1, NULL, '2026-06-02 08:56:55', '2026-06-02 08:56:55');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `dosen`
+--
+ALTER TABLE `dosen`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nidn` (`nidn`);
+
+--
+-- Indeks untuk tabel `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nim` (`nim`);
+
+--
+-- Indeks untuk tabel `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode_pinjam` (`kode_pinjam`),
+  ADD KEY `idx_tanggal` (`tanggal`),
+  ADD KEY `idx_ruang_tgl` (`ruang_id`,`tanggal`),
+  ADD KEY `mahasiswa_id` (`mahasiswa_id`),
+  ADD KEY `dosen_id` (`dosen_id`);
+
+--
+-- Indeks untuk tabel `ruang`
+--
+ALTER TABLE `ruang`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode` (`kode`);
+
+--
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `dosen`
+--
+ALTER TABLE `dosen`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=373;
+
+--
+-- AUTO_INCREMENT untuk tabel `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT untuk tabel `ruang`
+--
+ALTER TABLE `ruang`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`mahasiswa_id`) REFERENCES `mahasiswa` (`id`),
+  ADD CONSTRAINT `peminjaman_ibfk_2` FOREIGN KEY (`dosen_id`) REFERENCES `dosen` (`id`),
+  ADD CONSTRAINT `peminjaman_ibfk_3` FOREIGN KEY (`ruang_id`) REFERENCES `ruang` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
